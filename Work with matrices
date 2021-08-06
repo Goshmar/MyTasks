@@ -1,0 +1,105 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+
+  int mat1[2][2], mat2[3][3];
+
+// Task 1 and Task 2
+  cout << "Input first matrix:" << endl;
+  for (int i = 0; i < 2; i++){
+    for (int j = 0; j < 2; j++){
+      cin >> mat1[i][j];
+    }
+  }
+
+  cout << endl << "Input second matrix:" << endl;
+  for (int i = 0; i < 3; i++){
+    for (int j = 0; j < 3; j++){
+      cin >> mat2[i][j];
+    }
+  }
+
+  // Task 3
+
+  cout << endl << "First matrix:" << endl;
+  for (int i = 0; i < 2; i++){
+    for (int j = 0; j < 2; j++){
+      cout << mat1[i][j] << " ";
+    }
+    cout << endl;
+  }
+
+  cout << endl << "Second matrix:" << endl;
+  for (int i = 0; i < 3; i++){
+    for (int j = 0; j < 3; j++){
+      cout << mat2[i][j] << " ";
+    }
+    cout << endl;
+  }
+
+  // Task 4 and input for Task 5
+
+  cout << "Input size of matrices: ";
+  vector <vector <int>> matrix1, matrix2, matrix_sum, matrix_sub;
+  int size, num; cin >> size;
+
+  cout << endl << "Input first matrix:" << endl;
+  for (int i = 0; i < size; i++){
+    vector <int> temp;
+    for (int j = 0; j < size; j++){
+      cin >> num;
+      temp.push_back(num);
+    }
+    matrix1.push_back(temp);
+  }
+
+  cout << endl << "Input second matrix:" << endl;
+  for (int i = 0; i < size; i++){
+    vector <int> temp;
+    for (int j = 0; j < size; j++){
+      cin >> num;
+      temp.push_back(num);
+    }
+    matrix2.push_back(temp);
+  }
+
+  for (int i = 0; i < size; i++){
+    vector <int> temp;
+    for (int j = 0; j < size; j++){
+      temp.push_back(matrix1[i][j] + matrix2[i][j]);
+    }
+    matrix_sum.push_back(temp);
+  }
+
+  cout << endl << "Sum matrix:" << endl;
+  for (int i = 0; i < size; i++){
+    for (int j = 0; j < size; j++){
+      cout << matrix_sum[i][j] << " ";
+    }
+    cout << endl;
+  }
+
+  // Task 5
+
+  for (int i = 0; i < size; i++){
+    vector <int> temp;
+    for (int j = 0; j < size; j++){
+      temp.push_back(matrix1[i][j] - matrix2[i][j]);
+    }
+    matrix_sub.push_back(temp);
+  }
+
+  cout << endl << "Sub matrix:" << endl;
+  for (int i = 0; i < size; i++){
+    for (int j = 0; j < size; j++){
+      cout << matrix_sub[i][j] << " ";
+    }
+    cout << endl;
+  }
+
+  return 0;
+}
